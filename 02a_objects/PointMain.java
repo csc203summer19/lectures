@@ -69,5 +69,14 @@ public class PointMain
 
         // This fails to compile -- x cannot be changed.
         // pt8.x = 15;
+
+
+        Point pt9 = new Point(1, 2);
+        Point pt10 = new Point(1, 2);
+        // This is false -- pt9 and pt10 do not refer to the same object.
+        System.out.println("    " + (pt9 == pt10));
+        Point pt11 = pt9;
+        // This is true -- pt9 and pt10 do refer to the same object.
+        System.out.println("    " + (pt9 == pt11));
     }
 }
