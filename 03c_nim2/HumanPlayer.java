@@ -16,7 +16,7 @@ public class HumanPlayer implements Player
         // Make a new scanner to read user input.
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("How many sticks will you take [1, 3]? ");
+        System.out.print(name + ", how many sticks will you take [1, 3]? ");
         int taken = scanner.nextInt();
 
         pile.remove(taken);
