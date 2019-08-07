@@ -59,5 +59,11 @@ public class ShapeMain
 
         System.out.println("    " + shapes.get(0).area());
         System.out.println("    " + shapes.get(1).area());
+
+
+        // Downcasting can be protected by a type check:
+        if (shape2.getClass().equals(Circle.class)) {
+            System.out.println("    " + ((Circle)shape2).getCenter());
+        }
     }
 }
