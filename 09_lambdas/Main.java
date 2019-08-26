@@ -19,5 +19,23 @@ public class Main
                 pt -> "This is a point: " + pt;
 
         System.out.println("    " + stringifyAgain.apply(myPoint));
+
+        // If the lambda only calls an existing method, we can use a
+        //  method reference instead:
+        Function<Point, String> stringifyAnother = Point::toString;
+        System.out.println("    " + stringifyAnother.apply(myPoint));
+
+
+        // Lambdas can be composed, just like functions in math:
+        Function<String, String> shoutString = String::toUpperCase;
+        Function<Point, String> shoutPoint =
+                shoutString.compose(stringifyAgain);
+
+        System.out.println("    " + shoutPoint.apply(myPoint));
+
+        // NOTE: The types must match up: this does not compile; the output
+        //       of shoutString is not a valid input to stringifyAgain.
+        // Function<Point, String> shoutPoint =
+        //         stringifyAgain.compose(shoutString);
     }
 }
